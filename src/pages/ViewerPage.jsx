@@ -18,7 +18,7 @@ const [matches, setMatches] = useState([]);
 useEffect(() => {
     const fetchMatches = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/matches'); // Replace with your backend API URL
+            const response = await axios.get('http://localhost:2020/back2/api/matches'); // Replace with your backend API URL
             const formattedMatches = response.data.map(match => ({
                 date: new Date(match.matchDate).toLocaleDateString(),
                 time: new Date(match.matchDate).toLocaleTimeString(),

@@ -118,7 +118,7 @@ const MatchesPage = () => {
 
   const fetchMatches = async () => {
     try {
-      const response = await axios.get("http://localhost:1010/api/matches");
+      const response = await axios.get("http://localhost:2020/back2/api/matches");
       const data = response.data;
       const list = Array.isArray(data)
         ? data
@@ -134,7 +134,7 @@ const MatchesPage = () => {
 
   const fetchTeams = async () => {
     try {
-      const response = await axios.get("http://localhost:1010/api/teams");
+      const response = await axios.get("http://localhost:2020/back2/api/teams");
       const data = response.data;
       const list = Array.isArray(data)
         ? data
@@ -150,7 +150,7 @@ const MatchesPage = () => {
 
   const fetchPlayers = async () => {
     try {
-      const response = await axios.get("http://localhost:1010/api/players");
+      const response = await axios.get("http://localhost:2020/back2/api/players");
       const data = response.data;
       const list = Array.isArray(data)
         ? data
@@ -214,7 +214,7 @@ const MatchesPage = () => {
     }
 
     try {
-      await axios.post("http://localhost:1010/api/matches", {
+      await axios.post("http://localhost:2020/back2/api/matches", {
         title: newMatch.title,
         matchDate: newMatch.matchDate,
         venue: newMatch.venue,
