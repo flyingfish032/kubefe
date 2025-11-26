@@ -103,7 +103,7 @@ const TeamsPage = () => {
   useEffect(() => {
     // Fetch teams
     axios
-      .get("http://localhost:2020/back2/api/teams")
+      .get("http://localhost:30002/back2/api/teams")
       .then((response) => {
         const data = response.data;
         const list = Array.isArray(data)
@@ -120,7 +120,7 @@ const TeamsPage = () => {
 
     // Fetch players
     axios
-      .get("http://localhost:2020/back2/api/players")
+      .get("http://localhost:30002/back2/api/players")
       .then((response) => {
         const data = response.data;
         const list = Array.isArray(data)
@@ -166,7 +166,7 @@ const TeamsPage = () => {
     };
 
     axios
-      .post("http://localhost:2020/back2/api/teams", teamData)
+      .post("http://localhost:30002/back2/api/teams", teamData)
       .then((response) => {
         setTeams((prev) => [...prev, response.data]);
         setNewTeam("");
@@ -177,7 +177,7 @@ const TeamsPage = () => {
 
   const deleteTeam = (id) => {
     axios
-      .delete(`http://localhost:2020/back2/api/teams/${id}`)
+      .delete(`http://localhost:30002/back2/api/teams/${id}`)
       .then(() => {
         setTeams((prev) => prev.filter((team) => team.id !== id));
       })
@@ -193,7 +193,7 @@ const TeamsPage = () => {
     const updatedTeam = { ...teams[editingIndex], name: editingName };
 
     axios
-      .put(`http://localhost:2020/back2/api/teams/${updatedTeam.id}`, updatedTeam)
+      .put(`http://localhost:30002/back2/api/teams/${updatedTeam.id}`, updatedTeam)
       .then((response) => {
         const updatedTeams = [...teams];
         updatedTeams[editingIndex] = response.data;

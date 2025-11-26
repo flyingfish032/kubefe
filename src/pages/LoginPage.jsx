@@ -32,7 +32,7 @@ const LoginPage = () => {
 
     try {
       if (isSignUp) {
-        const signupResp = await fetch("http://localhost:2020/back2/users/insert", {
+        const signupResp = await fetch("http://localhost:30002/back2/users/insert", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -53,7 +53,7 @@ const LoginPage = () => {
           return;
         }
       } else {
-        const loginResp = await fetch("http://localhost:2020/back2/users/signin", {
+        const loginResp = await fetch("http://localhost:30002/back2/users/signin", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -76,7 +76,7 @@ const LoginPage = () => {
 
           try {
             const usernameResp = await fetch(
-              "http://localhost:2020/back2/users/getusername",
+              "http://localhost:30002/back2/users/getusername",
               {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
